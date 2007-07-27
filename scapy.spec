@@ -1,5 +1,5 @@
 %define name scapy
-%define version 1.0.4
+%define version 1.1.1
 %define release %mkrel 1
 
 Summary: An interactive packet manipulation tool and network scanner
@@ -9,7 +9,7 @@ Release: %release
 Group: Networking/Other
 License: GPL
 URL: http://www.secdev.org/projects/scapy
-Source: http://www.secdev.org/projects/scapy/files/%name-%version.tar.bz2
+Source: http://www.secdev.org/projects/scapy/files/%name-%version.tar.gz
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildArch: noarch
 Requires: python >= 2.2 nmap
@@ -41,7 +41,7 @@ mkdir -p %{buildroot}%{_bindir}/
 echo -e "#!/bin/bash\ncd %{_libdir}/python%pyver/\n./scapy.py" > %{buildroot}%{_bindir}/scapy
 chmod 0755  %{buildroot}%{_bindir}/scapy
 mkdir -p %{buildroot}/%{_mandir}/man1/
-zcat %{name}.1.gz > %{buildroot}/%{_mandir}/man1/%{name}.1
+cp %{name}.1 %{buildroot}/%{_mandir}/man1/%{name}.1
 
 %clean
 %{__rm} -rf %{buildroot}
