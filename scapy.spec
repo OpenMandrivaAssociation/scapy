@@ -10,6 +10,7 @@ Group: Networking/Other
 License: GPL
 URL: http://www.secdev.org/projects/scapy
 Source: http://www.secdev.org/projects/scapy/files/%name-%version.tar.gz
+BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildArch: noarch
 Requires: python >= 2.2 nmap
 
