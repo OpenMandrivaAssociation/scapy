@@ -1,6 +1,6 @@
 %define name scapy
 %define version 1.1.1
-%define release %mkrel 1
+%define release %mkrel 3
 
 Summary: An interactive packet manipulation tool and network scanner
 Name: %name
