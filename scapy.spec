@@ -1,19 +1,19 @@
 %define name scapy
-%define version 2.1.0
+%define version 2.1.1
 %define release %mkrel 1
 
-Summary: An interactive packet manipulation tool and network scanner
-Name: %name
-Version: %version
-Release: %release
-Group: Networking/Other
-License: GPL
-URL: http://www.secdev.org/projects/scapy
-Source: http://www.secdev.org/projects/scapy/files/%name-%version.tar.gz
-BuildRoot: %{_tmppath}/%{name}-buildroot
-BuildArch: noarch
-BuildRequires: python-devel
-Requires: python >= 2.2 nmap
+Summary:	An interactive packet manipulation tool and network scanner
+Name:		%name
+Version:	%version
+Release:	%release
+Group:		Networking/Other
+License:	GPL
+URL:		http://www.secdev.org/projects/scapy
+Source:		http://www.secdev.org/projects/scapy/files/%name-%version.tar.gz
+BuildRoot:	%{_tmppath}/%{name}-buildroot
+BuildArch:	noarch
+BuildRequires:	python-devel
+Requires:	python >= 2.2 nmap
 
 %description
 Scapy is a powerful interactive packet manipulation tool, packet generator,
@@ -44,7 +44,7 @@ the interpretor, and restored the next time you launch scapy.
 
 %files
 %defattr(-, root, root, 0755)
-%doc %{_mandir}/man1/scapy.1*
+%doc %{_mandir}/man1/scapy.1* 
 %{_bindir}/scapy
 %{_bindir}/UTscapy
 %{py_puresitedir}/scapy/*
