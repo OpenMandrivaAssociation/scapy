@@ -1,19 +1,16 @@
-%define name scapy
-%define version 2.1.1
-%define release %mkrel 1
-
+Name:		scapy
+Version:	2.2.0
+Release:	%mkrel 1
 Summary:	An interactive packet manipulation tool and network scanner
-Name:		%name
-Version:	%version
-Release:	%release
 Group:		Networking/Other
-License:	GPL
+License:	GPLv2
 URL:		http://www.secdev.org/projects/scapy
 Source:		http://www.secdev.org/projects/scapy/files/%name-%version.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArch:	noarch
 BuildRequires:	python-devel
-Requires:	python >= 2.2 nmap
+Requires:	python >= 2.2
+Requires:	nmap
+Requires:	tcpdump
 
 %description
 Scapy is a powerful interactive packet manipulation tool, packet generator,
@@ -28,23 +25,23 @@ session (variables, functions, intances, ...) will be saved when you leave
 the interpretor, and restored the next time you launch scapy.
 
 %prep
-%setup -q -n scapy-%{version}
+%setup -q
 
 %build
-%{__python} setup.py build
+%__python setup.py build
 
 %install
-%{__rm} -rf %{buildroot}
-%{__install} -Dp -m0644 doc/scapy.1.gz %{buildroot}%{_mandir}/man1/scapy.1.gz
-%{__python} setup.py install -O1 --skip-build --root %{buildroot}
-%{__rm} -f %{buildroot}%{python_sitelib}/*egg-info/requires.txt
+%__rm -rf %{buildroot}
+%__install -Dp -m0644 doc/scapy.1.gz %{buildroot}%{_mandir}/man1/scapy.1.gz
+%__python setup.py install -O1 --skip-build --root %{buildroot}
+%__rm -f %{buildroot}%{python_sitelib}/*egg-info/requires.txt
 
 %clean
-%{__rm} -rf %{buildroot}
+%__rm -rf %{buildroot}
 
 %files
 %defattr(-, root, root, 0755)
-%doc %{_mandir}/man1/scapy.1* 
+%doc %{_mandir}/man1/scapy.1*
 %{_bindir}/scapy
 %{_bindir}/UTscapy
 %{py_puresitedir}/scapy/*
