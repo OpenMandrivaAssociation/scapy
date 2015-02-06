@@ -1,6 +1,6 @@
 Name:		scapy
 Version:	2.2.0
-Release:	%mkrel 1
+Release:	2
 Summary:	An interactive packet manipulation tool and network scanner
 Group:		Networking/Other
 License:	GPLv2
