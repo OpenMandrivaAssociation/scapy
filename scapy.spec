@@ -4,7 +4,7 @@ Release:	2
 Summary:	An interactive packet manipulation tool and network scanner
 Group:		Networking/Other
 License:	GPLv2
-URL:		http://www.secdev.org/projects/scapy
+URL:		https://www.secdev.org/projects/scapy
 Source:		http://www.secdev.org/projects/scapy/files/%name-%version.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-devel
